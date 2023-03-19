@@ -1,0 +1,29 @@
+{
+    "name": "tombenevides/metavel",
+    "description": "A package to integrate Metabase to Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tombenevides\\Metavel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tom Benevides",
+            "email": "tom@tonge.dev"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^1.22"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "illuminate/support": "^10.4"
+    }
+}
