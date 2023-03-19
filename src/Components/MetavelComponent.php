@@ -12,7 +12,7 @@ class MetavelComponent extends Component
     protected string $type;
 
     public function __construct(
-        public ?int $resource = null,
+        public int $resource,
         public array $params = [],
         public bool $bordered = true,
         public bool $titled = true,
