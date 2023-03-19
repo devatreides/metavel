@@ -1,0 +1,36 @@
+
+
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        php: ['8.1','8.2']
+        dependency-version: [prefer-stable]
+
+    name: Tests with PHP ${{ matrix.php }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: mbstring, dom, fileinfo
+        tools: composer:v2
+        coverage: none
+
+    - name: Install PHP dependencies
+      run: composer install --ignore-platform-req=php --no-interaction --no-progress
+
+    - name: Running tests
+      run: vendor/bin/pest --colors=always
