@@ -2,7 +2,9 @@
 
 namespace Tombenevides\Metavel\Components;
 
-class Dashboard extends MetavelComponent
+use Tombenevides\Metavel\Visualization;
+
+class Dashboard extends Visualization
 {
     protected string $type = 'dashboard';
 }

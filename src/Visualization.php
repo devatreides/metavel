@@ -1,15 +1,14 @@
 <?php
 
-namespace Tombenevides\Metavel\Components;
+namespace Tombenevides\Metavel;
 
 use Illuminate\View\Component;
-use Tombenevides\Metavel\Traits\UrlGenerator;
 
-class MetavelComponent extends Component
+class Visualization extends Component
 {
-    use UrlGenerator;
-
     protected string $type;
+
+    private UrlGenerator $generator;
 
     public function __construct(
         public int $resource,
@@ -19,11 +18,14 @@ class MetavelComponent extends Component
         public bool $darkTheme = false,
         public int $width = 1366,
         public int $height = 768,
-    ){}
+        public ?string $style = null,
+    ){
+        $this->generator = new UrlGenerator;
+    }
 
     public function render()
     {
-        $url = $this->getUrl(
+        $url = $this->generator->getUrl(
             $this->type, 
             $this->resource, 
             $this->params, 
@@ -36,6 +38,7 @@ class MetavelComponent extends Component
             'url' => $url,
             'width' => $this->width,
             'height' => $this->height,
+            'style' => $this->style,
         ]);
     }
 }

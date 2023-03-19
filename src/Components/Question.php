@@ -2,7 +2,9 @@
 
 namespace Tombenevides\Metavel\Components;
 
-class Question extends MetavelComponent
+use Tombenevides\Metavel\Visualization;
+
+class Question extends Visualization
 {
     protected string $type = 'question';
 }

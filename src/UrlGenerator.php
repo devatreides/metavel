@@ -1,11 +1,11 @@
 <?php
 
-namespace Tombenevides\Metavel\Traits;
+namespace Tombenevides\Metavel;
 
 use Closure;
 use Illuminate\Support\Facades\Pipeline;
 
-trait UrlGenerator
+class UrlGenerator
 {
     public function getUrl(string $type, int $resource, array $params, bool $bordered, bool $titled, string $theme): string
     {
