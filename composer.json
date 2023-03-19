@@ -18,6 +18,15 @@
         "orchestra/testbench": "^8.0",
         "pestphp/pest": "^1.22"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tombenevides\\Metavel\\MetavelServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
