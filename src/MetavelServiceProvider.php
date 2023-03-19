@@ -9,7 +9,7 @@ class MetavelServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->loadViewComponentsAs('metavel', $this->viewComponents());
+        $this->loadComponents();
 
         $this->publishes([
             __DIR__ . '/config/metavel.php' => config_path('metavel.php'),
@@ -19,6 +19,12 @@ class MetavelServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/config/metavel.php', 'metavel');
+    }
+
+    protected function loadComponents(): void
+    {
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'metavel');
+        $this->loadViewComponentsAs('metavel', $this->viewComponents());
     }
 
     protected function viewComponents(): array
