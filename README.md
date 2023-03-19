@@ -20,7 +20,7 @@ Metabase is an open source business intelligence platform where you can create c
 
 ## HOW TO INSTALL
 
-To install the package, jus use [composer](https://getcomposer.org):
+To install the package, just use [composer](https://getcomposer.org):
 
 ```bash
 composer require tombenevides/metavel
@@ -36,12 +36,14 @@ After installing, publish your config file using:
 php artisan vendor:publish --tag=metavel-config
 ```
 
-This will create a `metavel.php` file in your config folder. There, you'll see the environment variables to set the Metabase's base url and secret key. You will also find a *expiration_time* an value that you can modify as you wish.
+This will create a `metavel.php` file in your config folder. There, you'll see the environment variables to set the Metabase's base url and secret key.
 
 ```env
 METAVEL_BASE_URL #Metabase base url
 METAVEL_SECRET_KEY #Metabase secret key
 ```
+
+You will also find in the config file a *expiration_time* option. Since the communication between Laravel and Metabase works with JWT, using this option you can set an exp date for you generated token. The value is in seconds using NumericDate format. 
 
 ### Call the component
 
@@ -55,7 +57,7 @@ After setting the platform credentials, you just need to call the match componen
 </body>
 ```
 
-The components have some properties that you can set to customize the embbeding. Most of them are optional, except for *resource*, which is the ID of the element on Metabase (question or dashboard). Besides that, you can also set:
+The components have some properties that you can set to customize the embbeding. Most of them are optional, except for **resource**, which is the ID of the element on Metabase (question or dashboard). Besides that, you can also set:
 
 | Property  | Type    | default value | Description                                      |
 |-----------|---------|---------------|--------------------------------------------------|
