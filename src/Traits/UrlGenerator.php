@@ -11,7 +11,7 @@ trait UrlGenerator
     {
         $token = $this->getToken($type, $resource, $params);
 
-        return config('metavel.url')."/embed/$type/".$token."#bordered=$bordered&titled=$titled";
+        return config('metavel.base_url')."/embed/$type/".$token."#bordered=$bordered&titled=$titled";
     }
 
     private function getToken(string $type, int $resource, array $params): string
