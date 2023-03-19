@@ -8,6 +8,11 @@
             "Tombenevides\\Metavel\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tombenevides\\Metavel\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Tom Benevides",
