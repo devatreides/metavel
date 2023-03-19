@@ -25,7 +25,6 @@
             ]
         }
     },
-    "minimum-stability": "dev",
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true
