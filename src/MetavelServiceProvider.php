@@ -3,6 +3,7 @@
 namespace Tombenevides\Metavel;
 
 use Illuminate\Support\ServiceProvider;
+use Tombenevides\Metavel\Components\Dashboard;
 use Tombenevides\Metavel\Components\Question;
 
 class MetavelServiceProvider extends ServiceProvider
@@ -30,7 +31,8 @@ class MetavelServiceProvider extends ServiceProvider
     protected function viewComponents(): array
     {
         return [
-            Question::class
+            Question::class,
+            Dashboard::class,
         ];
     }
 }

@@ -41,14 +41,12 @@ trait UrlGenerator
                         "typ" => "JWT"
                     ]);
 
-                    $header = $this->createBase64($headerInfo);
-
-                    return $next($header . '.' . $payload);
+                    return $next($this->createBase64($headerInfo) .'.'.$payload);
                 },
                 function (string $payload, Closure $next) {
                     $signature = hash_hmac('sha256', $payload, config('metavel.secret_key'), true);
 
-                    return $next($payload . '.' . $signature);
+                    return $next($payload .'.'.$this->createBase64($signature));
                 }
             ])
             ->thenReturn();
