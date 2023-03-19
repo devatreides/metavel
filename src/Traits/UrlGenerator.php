@@ -39,14 +39,14 @@ trait UrlGenerator
                     $headerInfo = json_encode([
                         "alg" => "HS256",
                         "typ" => "JWT"
-                    ], JSON_FORCE_OBJECT);
+                    ]);
 
                     $header = $this->createBase64($headerInfo);
 
                     return $next($header . '.' . $payload);
                 },
                 function (string $payload, Closure $next) {
-                    $signature = hash_hmac('sha256', $payload, config('metavel.secret_key'));
+                    $signature = hash_hmac('sha256', $payload, config('metavel.secret_key'), true);
 
                     return $next($payload . '.' . $signature);
                 }
