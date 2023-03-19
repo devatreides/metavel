@@ -16,13 +16,21 @@ class MetavelComponent extends Component
         public array $params = [],
         public bool $bordered = true,
         public bool $titled = true,
+        public bool $darkTheme = false,
         public int $width = 1366,
         public int $height = 768,
     ){}
 
     public function render()
     {
-        $url = $this->getUrl($this->type, $this->resource, $this->params, $this->bordered, $this->titled);
+        $url = $this->getUrl(
+            $this->type, 
+            $this->resource, 
+            $this->params, 
+            $this->bordered, 
+            $this->titled,
+            $this->darkTheme ? 'night' : 'day'
+        );
 
         return view("metavel::visualization", [
             'url' => $url,

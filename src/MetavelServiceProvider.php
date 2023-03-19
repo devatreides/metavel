@@ -25,14 +25,9 @@ class MetavelServiceProvider extends ServiceProvider
     protected function loadComponents(): void
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'metavel');
-        $this->loadViewComponentsAs('metavel', $this->viewComponents());
-    }
-
-    protected function viewComponents(): array
-    {
-        return [
+        $this->loadViewComponentsAs('metavel', [
             Question::class,
             Dashboard::class,
-        ];
+        ]);
     }
 }

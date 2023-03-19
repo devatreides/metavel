@@ -7,11 +7,14 @@ use Illuminate\Support\Facades\Pipeline;
 
 trait UrlGenerator
 {
-    public function getUrl(string $type, int $resource, array $params, bool $bordered, bool $titled): string
+    public function getUrl(string $type, int $resource, array $params, bool $bordered, bool $titled, string $theme): string
     {
         $token = $this->getToken($type, $resource, $params);
 
-        return config('metavel.base_url')."/embed/$type/".$token."#bordered=$bordered&titled=$titled";
+        return config('metavel.base_url')
+            ."/embed/$type/"
+            .$token
+            ."#bordered=$bordered&titled=$titled&theme=$theme";
     }
 
     private function getToken(string $type, int $resource, array $params): string
