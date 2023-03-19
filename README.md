@@ -12,6 +12,10 @@
 
 Metabase is an open source business intelligence platform where you can create charts/grids (known as questions) or a collection of questions (known as dashboards) as a custom visualization for your data. One of Metabase's features is embedding. Therefore, this package provides blade components that abstract the platform integration, allowing you to easily embed your question/dashboard in a Laravel application.
 
+![image](https://user-images.githubusercontent.com/18440704/226209981-defde2b1-5fb3-42da-8d6f-f9088f68e10f.png)
+
+
+
 ## REQUIREMENTS
 > **[PHP 8.1+](https://www.php.net/releases/)**
 >
