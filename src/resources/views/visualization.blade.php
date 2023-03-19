@@ -1,4 +1,4 @@
-<div class="{{ $style ?? 'row justify-content-center' }}">
+<div {{ $attributes }}>
     <iframe
         src="{{$url}}"
         frameborder="0"

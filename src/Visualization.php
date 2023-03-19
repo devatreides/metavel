@@ -18,7 +18,6 @@ class Visualization extends Component
         public bool $darkTheme = false,
         public int $width = 1366,
         public int $height = 768,
-        public ?string $style = null,
     ){
         $this->generator = new UrlGenerator;
     }
@@ -38,7 +37,6 @@ class Visualization extends Component
             'url' => $url,
             'width' => $this->width,
             'height' => $this->height,
-            'style' => $this->style,
         ]);
     }
 }
